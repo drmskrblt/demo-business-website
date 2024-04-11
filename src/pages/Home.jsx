@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "@react-spring/web";
 import MobileCarousel from "../components/MobileCarousel";
 
 import SlideFirst from "../assets/matthieu-beaumont-iYnpYeyu57k-unsplash.jpg";
