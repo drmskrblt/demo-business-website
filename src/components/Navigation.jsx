@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useTransition, animated } from "@react-spring/web";
 
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
@@ -24,17 +25,25 @@ const Navigation = () => {
     // burger menu icon
     burgerIcon: `text-3xl z-20 text-white transition-transform duration-300`,
     // show mobile menu on burger click
-    mobileMenu: `absolute w-full top-[76px] left-0 bg-[#121212] divide-y divide-slate-600 z-20 transition-transform duration-500 ease-in-out transform ${
-      expandBurger ? "translate-y-0" : "translate-y-full"
-    } overflow-hidden md:hidden`,
+    mobileMenu: `absolute w-full top-[76px] left-0 bg-[#121212] divide-y divide-slate-600 z-20`,
     // font on collapsed mobile menu
-    mobileLink: `block p-6 text-white px-8 md:hidden`,
-    mobileLinkActive: `block p-6 bg-[#2b4a64] text-white px-8 md:hidden`,
+    mobileLink: `block p-6 text-white px-8 text-lg md:hidden`,
+    mobileLinkActive: `block p-6 bg-white text-black px-8 font-bold text-lg md:hidden`,
     // navigation on desktop
     navDesktop: `h-[80px] hidden md:flex justify-center items-center`,
     // navigation desktop text
     desktopLink: `block p-4 text-[#2b4a64] font-bold ml-6`,
   };
+
+  const navtransition = useTransition(expandBurger, {
+    from: { transform: "translateY(-100%)" }, opacit: 0,
+    enter: { transform: "translateY(0%)" }, opacity: 1,
+    leave: { transform: "translateY(-200%)", opacity: 0 },
+    config: { tension: 1000, friction: 60 },
+  });
+
+
+
 
   return (
     <nav className={STYLE.nav}>
@@ -64,64 +73,67 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Menu */}
-      {expandBurger && (
-        <ul className={STYLE.mobileMenu}>
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
-              }
-              onClick={closeMenu}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/service"
-              className={({ isActive }) =>
-                isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
-              }
-              onClick={closeMenu}
-            >
-              Service
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/produkte"
-              className={({ isActive }) =>
-                isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
-              }
-              onClick={closeMenu}
-            >
-              Produkte
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/ueber-uns"
-              className={({ isActive }) =>
-                isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
-              }
-              onClick={closeMenu}
-            >
-              Über uns
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/kontakt"
-              className={({ isActive }) =>
-                isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
-              }
-              onClick={closeMenu}
-            >
-              Kontakt
-            </NavLink>
-          </li>
-        </ul>
+      {navtransition(
+        (style, item) =>
+          item && (
+            <animated.ul style={style} className={STYLE.mobileMenu}>
+              <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
+                  }
+                  onClick={closeMenu}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/service"
+                  className={({ isActive }) =>
+                    isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
+                  }
+                  onClick={closeMenu}
+                >
+                  Service
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/produkte"
+                  className={({ isActive }) =>
+                    isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
+                  }
+                  onClick={closeMenu}
+                >
+                  Produkte
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/ueber-uns"
+                  className={({ isActive }) =>
+                    isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
+                  }
+                  onClick={closeMenu}
+                >
+                  Über uns
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/kontakt"
+                  className={({ isActive }) =>
+                    isActive ? STYLE.mobileLinkActive : STYLE.mobileLink
+                  }
+                  onClick={closeMenu}
+                >
+                  Kontakt
+                </NavLink>
+              </li>
+            </animated.ul>
+          )
       )}
 
       {/* Desktop View */}

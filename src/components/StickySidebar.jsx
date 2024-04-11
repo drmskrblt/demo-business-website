@@ -1,20 +1,19 @@
-import { IoMdChatboxes } from "react-icons/io";
+import { IoMdMail } from "react-icons/io";
+import { FaPhone } from "react-icons/fa";
 
 const StickySidebar = () => {
-
-  const sendMessage = () => {
-    console.log("works");
-  };
-
   return (
-    <div className="fixed bottom-3 right-3">
-      <div
-        className="bg-[#2b4a64] text-white font-bold p-2 rounded-full drop-shadow-lg border-2 border-white"
-        onClick={sendMessage}
-      >
-        <IoMdChatboxes className="text-4xl" />
+    <div className="bg-[#ffffff] fixed bottom-1/4 right-0 rounded-xl shadow-lg border-2 border-black">
+      <div className=" text-white font-bold p-2 my-0.5">
+        <a href="tel:+1234567890">
+          <FaPhone className="text-4xl text-black" />
+        </a>
       </div>
-
+      <div className=" text-white font-bold p-2 my-0.5">
+        <a href="mailto:mustermann@beispiel.de">
+          <IoMdMail className="text-4xl text-black" />
+        </a>
+      </div>
     </div>
   );
 };
