@@ -9,6 +9,7 @@ import SlideThird from "../assets/nrd-c3tNiAb098I-unsplash.jpg";
 
 const Home = () => {
   const STYLE = {
+    heroContainer: `h-80 bg-blue`,
     sectionContainer: `bg-[#121212] w-full mx-auto p-6 text-white`,
   };
 
@@ -61,11 +62,11 @@ const Home = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <div>
+      <div className={STYLE.heroContainer}>
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className="h-screen w-full bg-cover bg-center  text-white flex items-center justify-center relative text-center"
+            className="h-full w-full bg-cover bg-center  text-white flex items-center justify-center relative text-center"
             style={{
               backgroundImage: slide.bg,
               display: index === currentSlide ? "flex" : "none",

@@ -1,5 +1,7 @@
 import { IoMdMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const StickySidebar = () => {
   return (
@@ -7,6 +9,11 @@ const StickySidebar = () => {
       <div className=" text-white font-bold p-2 my-0.5">
         <a href="tel:+1234567890">
           <FaPhone className="text-4xl text-black" />
+        </a>
+      </div>
+      <div className=" text-white font-bold p-2 my-0.5">
+        <a href="https://wa.me/1234567890">
+          <FaWhatsapp className="text-4xl text-black" />
         </a>
       </div>
       <div className=" text-white font-bold p-2 my-0.5">
@@ -19,3 +26,4 @@ const StickySidebar = () => {
 };
 
 export default StickySidebar;
+
