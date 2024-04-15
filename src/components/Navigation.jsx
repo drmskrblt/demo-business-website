@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useTransition, animated } from "@react-spring/web";
 
 import { FaBars, FaTimes } from "react-icons/fa";
-import { IoLocationOutline } from "react-icons/io5";
+// import { IoLocationOutline } from "react-icons/io5";
 import LogoImage from "../assets/NextVisionLOGO.png";
 
 const Navigation = () => {
