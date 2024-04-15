@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useTransition, animated } from "@react-spring/web";
 
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -61,14 +61,15 @@ const Navigation = () => {
 
         {/* Logo Centered */}
         <div className="">
-          <NavLink to="/">
+        <Link href="/" className="text-white text-4xl font-bold">NextVision-IT</Link>
+          {/* <NavLink to="/">
             <img src={LogoImage} alt="logo of the company mobile" />
-          </NavLink>
+          </NavLink> */}
         </div>
 
         {/* Location Icon */}
         <div className="text-3xl z-20 text-white">
-          <IoLocationOutline />
+          {/* <IoLocationOutline /> */}
         </div>
       </div>
 

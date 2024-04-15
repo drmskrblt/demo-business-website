@@ -7,17 +7,17 @@ const StickySidebar = () => {
   return (
     <div className="bg-[#ffffff] fixed bottom-1/4 right-0 rounded-xl shadow-lg border-2 border-black">
       <div className=" text-white font-bold p-2 my-0.5">
-        <a href="tel:+1234567890">
+        <a href="tel:+4917662665748">
           <FaPhone className="text-4xl text-black" />
         </a>
       </div>
       <div className=" text-white font-bold p-2 my-0.5">
-        <a href="https://wa.me/1234567890">
+        <a href="https://wa.me/4917662665748">
           <FaWhatsapp className="text-4xl text-[#25D366]" />
         </a>
       </div>
       <div className=" text-white font-bold p-2 my-0.5">
-        <a href="mailto:mustermann@beispiel.de">
+        <a href="mailto:adem.karabulut@nextvision-it.de">
           <IoMdMail className="text-4xl text-black" />
         </a>
       </div>

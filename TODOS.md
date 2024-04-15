@@ -22,3 +22,10 @@ https://www.flaticon.com/free-icon/technology_11485971?term=digitalized&page=1&p
 https://www.flaticon.com/free-icon/server_2318786?term=cloud&page=1&position=3&origin=search&related_id=2318786
 
 https://www.flaticon.com/free-icon/design_12700451?term=website+design&page=4&position=59&origin=search&related_id=12700451
+
+
+-> Replaced Logo with Text
+-> Removed Location Icon
+--> Index.html -> changed Title
+
+-> Added Number, whatsapp and email
