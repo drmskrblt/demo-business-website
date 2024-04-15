@@ -13,7 +13,7 @@ const StickySidebar = () => {
       </div>
       <div className=" text-white font-bold p-2 my-0.5">
         <a href="https://wa.me/1234567890">
-          <FaWhatsapp className="text-4xl text-black" />
+          <FaWhatsapp className="text-4xl text-[#25D366]" />
         </a>
       </div>
       <div className=" text-white font-bold p-2 my-0.5">
