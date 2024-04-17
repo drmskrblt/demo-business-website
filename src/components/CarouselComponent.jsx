@@ -7,7 +7,7 @@ const CarouselComponent = () => {
   return (
     <Carousel>
       {carouselItems.map((item, index) => (
-        <div key={index} className="relative h-[500px] w-full my-2">
+        <div key={index} className="relative h-[500px] w-full md:h-[1000px] md:mx-auto md:bg-[#141414]">
           <img
             src={item.image}
             alt={item.alt}

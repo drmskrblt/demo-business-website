@@ -21,17 +21,18 @@ const Home = () => {
         </div>
       </div>
 
+
       {/* ABOUT US SECTION */}
       <section className={STYLE.sectionContainer}>
-        <div className="bg-[#121212] h-1/2 w-full">
-          <div className="flex flex-col items-center text-center p-4 text-white gap-2 tracking-wide">
-            <h2 className="text-3xl font-bold tracking-wider">
+        <div className="h-1/2  w-full md:h-full md:flex md:justify-center">
+          <div className="flex flex-col items-center text-center p-4 text-white gap-2 tracking-wide md:w-[500px]">
+            <h2 className="text-3xl font-bold tracking-wider md:text-4xl">
               Wir beraten Sie!
             </h2>
             <span>______________</span>
-            <p className="text-2xl">Erfahren Sie mehr über uns</p>
+            <p className="text-2xl md:text-3xl">Erfahren Sie mehr über uns</p>
             <span>______________</span>
-            <p>
+            <p className="md:text-lg">
               Wir von NextVision sind Ihr vertrauenswürdiger Partner im Bereich
               IT-Beratungen. Mit einem Team aus erfahrenen Experten bieten wir
               maßgeschneiderte Lösungen, die genau auf Ihre geschäftlichen
@@ -44,6 +45,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* SLIDE CAROUSEL SECTION */}
       <section>

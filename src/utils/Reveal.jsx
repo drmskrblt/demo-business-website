@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-export const Reveal = ({ children, width = "fit-content" }) => {
+export const Reveal = ({ children }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -14,10 +14,10 @@ export const Reveal = ({ children, width = "fit-content" }) => {
   }, [isInView, mainControls]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div ref={ref}>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: -100 },
+          hidden: { opacity: 0, y: 100 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
